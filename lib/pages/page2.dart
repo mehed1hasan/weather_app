@@ -134,7 +134,73 @@ class _Page2State extends State<Page2> {
                 fit: BoxFit.fill,
               ),
             ),
+          ),
+
+          Container(
+            margin:EdgeInsets.fromLTRB(25, 240+170+30+200, 20, 0),
+            height: 600,
+            width: 700,
+            color: Colors.transparent,
+            child: GridView.count(
+              primary: false,
+             // padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.white60,
+                    ),
+                    color: Color(0xff1f1d47),
+                  ),
+                  child: Image.asset("assets/uvindex.png"),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.white60,
+                    ),
+                    color: Color(0xff1f1d47),
+                  ),
+                  child: Image.asset("assets/Sunrise.png"),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.white60,
+                    ),
+                    color: Color(0xff1f1d47),
+                  ),
+                  child: Image.asset("assets/wind.png"),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.white60,
+                    ),
+                    color: Color(0xff1f1d47),
+                  ),
+                  child: Image.asset("assets/rainfall.png"),
+                ),
+
+              ],
+            ),
           )
+          //Text("fuck",style: TextStyle(fontSize: 89),)
 
         ],
       ),
