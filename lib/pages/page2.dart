@@ -170,7 +170,7 @@ class _Page2State extends State<Page2> {
                     ),
                     color: Color(0xff1f1d47),
                   ),
-                  child: Image.asset("assets/Sunrise.png"),
+                  child: Image.asset("assets/sr.png"),
                 ),
                 Container(
                   padding: const EdgeInsets.all(8),
