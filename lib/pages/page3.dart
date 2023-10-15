@@ -18,7 +18,12 @@ class _Page3State extends State<Page3> {
           title: Text('Custom Rectangle'),
         ),
         body: Center(
-          child: CustomRectangle(),
+          child: Container(
+              child: CustomRectangle(),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
         ),
 
     );
@@ -49,8 +54,8 @@ class RectanglePainter extends CustomPainter {
 
     // Define the four points of the rectangle with different side lengths
     var point1 = Offset(0, 0);
-    var point2 = Offset(200, 0);
-    var point3 = Offset(150, 100);
+    var point2 = Offset(200, 50);
+    var point3 = Offset(200, 100);
     var point4 = Offset(0, 100);
 
     // Create a path and add the points to it
