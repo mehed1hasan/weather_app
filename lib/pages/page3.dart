@@ -15,112 +15,112 @@ class _Page3State extends State<Page3> {
       backgroundColor: const Color(0xFF1C1B33),
       extendBodyBehindAppBar: true,
 
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF1C1B33),
-          title: const Text('Weather',
-            style: TextStyle(color: Colors.white),
-          ),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF1C1B33),
+        title: const Text('Weather',
+          style: TextStyle(color: Colors.white),
         ),
-        body: Stack(
-          children: [
-            /// Search bar container
-            Container(
-              height: 40,
-              width: 400,
-              margin: const EdgeInsets.fromLTRB(20, 120, 20, 0),
-              decoration: const BoxDecoration(
+      ),
+      body: Stack(
+        children: [
+          /// Search bar container
+          Container(
+            height: 40,
+            width: 400,
+            margin: const EdgeInsets.fromLTRB(20, 120, 20, 0),
+            decoration: const BoxDecoration(
                 color: Colors.black26,
                 borderRadius: BorderRadius.all(Radius.circular(10))
-              ),
-              child: const Row(
-                children: [
-                  SizedBox(width: 10,),
-                  Icon(Icons.search, size: 25,color: Colors.white54,),
-                  SizedBox(width: 10,),
-                  Text('Search for a city or airport',
-                  style: TextStyle(
-                    color: Colors.white54
-                  ),)
-                ],
-              ),
             ),
-            /// Weather box list container
-            Container(
+            child: const Row(
+              children: [
+                SizedBox(width: 10,),
+                Icon(Icons.search, size: 25,color: Colors.white54,),
+                SizedBox(width: 10,),
+                Text('Search for a city or airport',
+                  style: TextStyle(
+                      color: Colors.white54
+                  ),)
+              ],
+            ),
+          ),
+          /// Weather box list container
+          Container(
               height: double.infinity,
               width: double.infinity,
               margin: const EdgeInsets.fromLTRB(30, 160, 30, 0),
               child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: lists.length,
-                itemBuilder: (context, index){
-                  final item = lists[index];
-                  return Stack(
-                    children: [
-                      ClipPath(
-                        clipper: BackgroundClipper(),
-                        child: Container(
-                          width: 350,
-                          height: 190,
-                          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                          //color: Colors.blue,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Colors.indigo.shade800,Colors.indigo.shade900],
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
+                  scrollDirection: Axis.vertical,
+                  itemCount: lists.length,
+                  itemBuilder: (context, index){
+                    final item = lists[index];
+                    return Stack(
+                      children: [
+                        ClipPath(
+                          clipper: BackgroundClipper(),
+                          child: Container(
+                            width: 350,
+                            height: 190,
+                            margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            //color: Colors.blue,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Colors.indigo.shade800,Colors.indigo.shade900],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      /// Text Container
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(20, 30, 100, 0),
-                        height: 200,
-                        width: 150,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(item.temperature,
-                              style: const TextStyle(
+                        /// Text Container
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(20, 30, 100, 0),
+                          height: 200,
+                          width: 150,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(item.temperature,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.w400
+                                ),
+                              ),
+                              const SizedBox(height: 10,),
+                              const Text('H:24° L:18°',
+                                style: TextStyle(
+                                    color: Colors.white54,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500
+                                ),
+                              ),
+                              Text(item.place,
+                                style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.w400
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 10,),
-                            const Text('H:24° L:18°',
-                              style: TextStyle(
-                                  color: Colors.white54,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500
-                              ),
-                            ),
-                            Text(item.place,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      /// Image Container
-                      Container(
-                        height: 140,
-                        width: 180,
-                        margin: const EdgeInsets.fromLTRB(220, 0, 30, 0),
-                        child: Image.asset(
-                          item.image2,
-                          fit: BoxFit.cover,
-                        ),
-                      )
-                    ],
-                  );
-                }
+                        /// Image Container
+                        Container(
+                          height: 140,
+                          width: 180,
+                          margin: const EdgeInsets.fromLTRB(220, 0, 30, 0),
+                          child: Image.asset(
+                            item.image2,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      ],
+                    );
+                  }
               )
-            ),
-          ],
-        ),
+          ),
+        ],
+      ),
 
     );
   }
@@ -160,7 +160,7 @@ class BackgroundClipper extends CustomClipper<Path>{
 
     return true;
   }
-  
+
 }
 
 

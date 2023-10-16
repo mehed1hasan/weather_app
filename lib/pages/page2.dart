@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/pages/page3.dart';
+import 'bar.dart';
 
 import '../models/lists.dart';
 import '../widgets/card1.dart';
@@ -57,7 +58,7 @@ class _Page2State extends State<Page2> {
                 ),
                 const SizedBox(height: 12,),
                 const Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(width: 30,),
                     Text("Hourly Forecast",
@@ -116,7 +117,7 @@ class _Page2State extends State<Page2> {
             ),
           ),
           /// See more Box
-          InkWell(
+          GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => Page3()));
             },
@@ -124,15 +125,89 @@ class _Page2State extends State<Page2> {
               margin: EdgeInsets.fromLTRB(25, 240+170+30, 20, 0),
               height: 180,
               width: 375,
-              /*decoration: BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.black26,
                 borderRadius: BorderRadius.all(Radius.circular(25)),
                 border: Border.all(color: Colors.white10)
-              ),*/
-              child: Image.asset(
-                'assets/seemore.png',
-                fit: BoxFit.fill,
               ),
+              child:Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.air_outlined,size: 16,color: Colors.white54,),
+                        SizedBox(width: 10,),
+                        Text(
+                          "AIR QUALITY",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white54,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Text(
+                      "69-High Health Risk",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.white70
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    Center(
+                      child: Stack(
+                        children:[
+                          Container(
+                            margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                            height: 5,
+                            width: 350,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              gradient: LinearGradient(
+                                colors: [Colors.blue, Colors.pink.shade600],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
+                            ),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.fromLTRB(270, 0, 20, 0),
+                            height: 15,
+                            width: 15,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(width: 3,color: Colors.black)
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                    Divider(color: Colors.grey[700],),
+                    SizedBox(height: 4),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "See More",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white54,
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward_ios,size: 20,color: Colors.white54,),
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ),
           ),
 

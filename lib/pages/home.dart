@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
             margin: const EdgeInsets.only(top: 520),
             decoration:  const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xcf2E335A),Color(0xcf1C1B33),],
+                colors: [Color(0x662E335A),Color(0x661C1B33),],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
